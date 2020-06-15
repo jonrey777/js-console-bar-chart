@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+let data = {
+  "label"  : ["2000","2001","2002"],
+  "amount" : [1,5,3],
+};
+let max = Math.max(...data.amount);
+let amount_size = data.amount.length;
+let label_size = data.label.length;
+let output = result = label = "";
+let tmp_max = max;
+
+for (let i = 0; i <= max; i++) {
+
+  result=max - i + " ";
+  if((max - i) == 0) break;
+  for (let j = 0; j < amount_size; j++) {
+    
+    if(data.amount[j] >= tmp_max){
+      result+=" |||| ";
+    }else{
+      result+="      ";
+    }
+
+  }
+
+  tmp_max--;
+  output+=result+"\n";
+
+}
+for (let i = 0; i < label_size; i++) {
+  label+=data.label[i] + "   ";
+}
+
+console.log(output + "  " + label);
+
+</script>
+</body>
+</html>
